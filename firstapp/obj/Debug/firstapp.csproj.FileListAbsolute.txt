@@ -1,0 +1,10 @@
+F:\WORK\Visual Studio\firstapp\firstapp\bin\Debug\firstapp.exe.config
+F:\WORK\Visual Studio\firstapp\firstapp\bin\Debug\firstapp.exe
+F:\WORK\Visual Studio\firstapp\firstapp\bin\Debug\firstapp.pdb
+F:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.csprojAssemblyReference.cache
+F:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.Form1.resources
+F:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.Properties.Resources.resources
+F:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.csproj.GenerateResource.cache
+F:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.csproj.CoreCompileInputs.cache
+F:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.exe
+F:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.pdb
