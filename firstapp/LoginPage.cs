@@ -30,10 +30,15 @@ namespace firstapp
             DBConnect dBConnect = new DBConnect();
             if(dBConnect.IsLogin(txtUsername.Text, txtPassword.Text) == true)
             {
+                //this.Close();
+                //thread = new Thread(mainform);
+                //thread.Name = "ambot";
+                //thread.SetApartmentState(ApartmentState.STA);
+                //thread.Start();
+                this.Hide();
+                Main main = new Main(txtUsername.Text);
+                main.ShowDialog();
                 this.Close();
-                thread = new Thread(mainform);
-                thread.SetApartmentState(ApartmentState.STA);
-                thread.Start();
             }
              else
             {
@@ -45,7 +50,9 @@ namespace firstapp
 
         private void mainform()
         {
-            Application.Run(new Main());
+            String n = txtUsername.Text;
+            Console.WriteLine("Thread Running");
+            Application.Run(new Main(n));
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -12,9 +12,11 @@ namespace firstapp
 {
     public partial class Main : Form
     {
-        public Main()
+        public Main(String UID, String Role)
         {
             InitializeComponent();
+            sessionUID.Text = UID;
+            sessionROLE.Text = Role;
         }
         public string user;
 
@@ -33,9 +35,9 @@ namespace firstapp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Driver driver = new Driver();
+            //Driver driver = new Driver();
             //frmVehicle.user = "ADMIN";
-            driver.objid = "0000" + DateTime.Now;
+            // driver.objid = "0000" + DateTime.Now;
             this.treeView1.Nodes[0].ExpandAll();
 
             f = new frmDriver
@@ -117,7 +119,12 @@ namespace firstapp
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoginPage loginPage = new LoginPage();
+
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
