@@ -36,9 +36,10 @@ namespace firstapp
                 //thread.SetApartmentState(ApartmentState.STA);
                 //thread.Start();
                 this.Hide();
-                Main main = new Main(txtUsername.Text);
+                Main main = new Main(txtUsername.Text, "ADMIN");
                 main.ShowDialog();
                 this.Close();
+                
             }
              else
             {
@@ -48,12 +49,12 @@ namespace firstapp
             //connection.Close();
         }
 
-        private void mainform()
-        {
-            String n = txtUsername.Text;
-            Console.WriteLine("Thread Running");
-            Application.Run(new Main(n));
-        }
+        //private void mainform()
+        //{
+        //    String n = txtUsername.Text;
+        //    Console.WriteLine("Thread Running");
+        //    Application.Run(new Main(n, "ADMIN"));
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {

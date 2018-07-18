@@ -8,18 +8,37 @@ namespace firstapp
 {
     class entity
     {
-        public class Entity
+        
+        public class Vehicle
         {
-            public string _objid;
-            public String _plateno;
-            public string _brand;
-            public string _model;
-            public string _version;
-            public int _age;
-            public DateTime _datelisted;
-            public string _fueltype;
-            public string _state;
-            public String _remarks;
+            public String objid;
+            public String plateno;
+            public String brand;
+            public String model;
+            public String version;
+            public int age;
+            public DateTime datelisted;
+            public String fueltype;
+            public String state;
+            public String remarks;
+        }
+
+        public class Useraccount
+        {
+            public string userid;
+            public string username;
+            public string password;
+            public string role;
+        }
+
+        public class Driver
+        {
+            public string objid;
+            public string firstname;
+            public string lastname;
+            public string middlename;
+            public string idno;
+
         }
     }
 }

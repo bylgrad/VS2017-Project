@@ -16,5 +16,18 @@ namespace firstapp
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtFirstname.Text = null;
+            txtIDno.Text = null;
+            txtLastname.Text = null;
+            txtMiddlename.Text = null;
+        }
     }
 }

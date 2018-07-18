@@ -54,35 +54,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="entity.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDriver.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDriver.Designer.cs">
       <DependentUpon>frmDriver.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRequest.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRequest.Designer.cs">
-      <DependentUpon>frmRequest.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTravel.cs">
+    <Compile Include="listDriver.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTravel.Designer.cs">
-      <DependentUpon>frmTravel.cs</DependentUpon>
+    <Compile Include="listDriver.Designer.cs">
+      <DependentUpon>listDriver.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVehicle.cs">
+    <Compile Include="listRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVehicle.Designer.cs">
-      <DependentUpon>frmVehicle.cs</DependentUpon>
+    <Compile Include="listRequest.Designer.cs">
+      <DependentUpon>listRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listTravel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listTravel.Designer.cs">
+      <DependentUpon>listTravel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>listVehicle.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -93,20 +100,23 @@
     <Compile Include="DBConnect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDriver.resx">
       <DependentUpon>frmDriver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRequest.resx">
-      <DependentUpon>frmRequest.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTravel.resx">
-      <DependentUpon>frmTravel.cs</DependentUpon>
+    <EmbeddedResource Include="listDriver.resx">
+      <DependentUpon>listDriver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVehicle.resx">
-      <DependentUpon>frmVehicle.cs</DependentUpon>
+    <EmbeddedResource Include="listRequest.resx">
+      <DependentUpon>listRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listTravel.resx">
+      <DependentUpon>listTravel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listVehicle.resx">
+      <DependentUpon>listVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

@@ -50,6 +50,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVehicle";
             this.Text = "frmVehicle";
+            this.Load += new System.EventHandler(this.frmVehicle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

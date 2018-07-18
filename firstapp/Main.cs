@@ -40,7 +40,7 @@ namespace firstapp
             // driver.objid = "0000" + DateTime.Now;
             this.treeView1.Nodes[0].ExpandAll();
 
-            f = new frmDriver
+            f = new listDriver
             {
                 TopLevel = false
             };
@@ -60,7 +60,7 @@ namespace firstapp
                 case "DRIVER":
 
                     f.Dispose();
-                    f = new frmDriver
+                    f = new listDriver
                     {
                         TopLevel = false
                     };
@@ -87,7 +87,7 @@ namespace firstapp
                 case "REQUEST":
 
                     f.Dispose();
-                    f = new frmRequest
+                    f = new listRequest
                     {
                         TopLevel = false
                     };
@@ -100,7 +100,7 @@ namespace firstapp
                 case "TRAVEL":
 
                     f.Dispose();
-                    f = new frmTravel
+                    f = new listTravel
                     {
                         TopLevel = false
                     };

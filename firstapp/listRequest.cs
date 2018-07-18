@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace firstapp
 {
-    public partial class frmVehicle : Form
+    public partial class listRequest : Form
     {
-        public frmVehicle()
+        public listRequest()
         {
             InitializeComponent();
         }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace firstapp
 {
-    public partial class frmTravel : Form
+    public partial class frmVehicle : Form
     {
-        public frmTravel()
+        public frmVehicle()
         {
             InitializeComponent();
+        }
+
+        private void frmVehicle_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
