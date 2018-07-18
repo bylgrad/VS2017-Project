@@ -9,35 +9,43 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Threading;
 
 
 namespace firstapp
 {
     public partial class LoginPage : Form
     {
+        Thread thread;
+        MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;password=1234;database=vs2010_motorpool;allowuservariables=True;persistsecurityinfo=True");
+
         public LoginPage()
         {
             InitializeComponent();
-            //DBConnect dBConnect = new DBConnect();
             //dBConnect.Insert();
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;database=vs2010_motorpool;allowuservariables=True;persistsecurityinfo=True");
-            MySqlDataAdapter sda = new MySqlDataAdapter("SELECT count(*) FROM useraccount WHERE username='"+txtUsername.Text+"' AND password = '" + txtPassword.Text + "'", conn);
-            
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+        {            
+            DBConnect dBConnect = new DBConnect();
+            if(dBConnect.IsLogin(txtUsername.Text, txtPassword.Text) == true)
             {
-                this.Hide();
-                Main main = new Main();
-                main.Show();
+                this.Close();
+                thread = new Thread(mainform);
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
             }
-            else
+             else
+            {
                 MessageBox.Show("Incorrect Username and Password", "alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
+            }
+            //connection.Close();
+        }
+
+        private void mainform()
+        {
+            Application.Run(new Main());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,6 +69,17 @@ namespace firstapp
         {
             DBConnect dBConnect = new DBConnect();
             dBConnect.Backup();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DBConnect dBConnect = new DBConnect();
+            dBConnect.Count();
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

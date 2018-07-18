@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -80,6 +81,45 @@ namespace firstapp
                 return false;
             }
         }
+
+        public bool IsLogin(string a, string b)
+        {
+            try
+            {
+                if (this.OpenConnection() == true)
+                {
+                    int i;
+                    MySqlCommand cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "SELECT COUNT(*) FROM useraccount WHERE username='"+a+"' AND password='"+b+"'";
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    i = int.Parse(cmd.ExecuteScalar() + "");
+                    if (i == 1)
+                    {
+                        this.CloseConnection();
+                        return true;
+                    }
+                    else
+                    {
+                        this.CloseConnection();
+                        return false;
+                    }
+                }
+                    else
+                    {
+                        this.CloseConnection();
+                        return false;
+                    }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
 
         //Insert statement
         public void Insert()
@@ -182,7 +222,7 @@ namespace firstapp
         //Count statement
         public int Count()
         {
-            string query = "SELECT Count(*) FROM tableinfo";
+            string query = "SELECT COUNT(*) FROM useraccount";
             int Count = -1;
 
             //Open Connection
@@ -193,7 +233,6 @@ namespace firstapp
 
                 //ExecuteScalar will return one value
                 Count = int.Parse(cmd.ExecuteScalar() + "");
-
                 //close Connection
                 this.CloseConnection();
 
