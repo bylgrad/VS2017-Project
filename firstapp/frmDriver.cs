@@ -12,6 +12,7 @@ namespace firstapp
 {
     public partial class frmDriver : Form
     {
+        
         public frmDriver()
         {
             InitializeComponent();
@@ -32,13 +33,23 @@ namespace firstapp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            entity entity = new entity();
-            
+            entity.Driver driver = new entity.Driver()
+            {
+                objid = DateTime.Now.Year + DateTime.Now.ToString("MMddyyyyHHmmssfff"),
+                firstname = txtFirstname.Text,
+                lastname = txtLastname.Text,
+                middlename = txtMiddlename.Text,
+                idno = txtIDno.Text
+            };
+            labelEntity.Text = driver.objid;
+            DBConnect.NewDriver newDriver = new DBConnect.NewDriver();
+            newDriver.AddDriver();
+
         }
 
         private void frmDriver_Load(object sender, EventArgs e)
         {
-
+            entity.Vehicle vehicle = new entity.Vehicle();
         }
     }
 }

@@ -120,6 +120,15 @@ namespace firstapp
             }
         }
 
+        public class NewDriver
+        {
+            public void AddDriver() { }
+            public void AddDriver(string a)
+            {
+
+            }
+        }
+
 
         //Insert statement
         public void Insert()

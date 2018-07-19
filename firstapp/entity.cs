@@ -11,16 +11,31 @@ namespace firstapp
         
         public class Vehicle
         {
-            public String objid;
-            public String plateno;
-            public String brand;
-            public String model;
-            public String version;
-            public int age;
-            public DateTime datelisted;
-            public String fueltype;
-            public String state;
-            public String remarks;
+            string objid;
+            string plateno;
+            string brand;
+            string model;
+            string version;
+            int age;
+            DateTime datelisted;
+            string fueltype;
+            string state;
+            string remarks;
+
+            public Vehicle() { }
+            public Vehicle(String objid, String plateno, String brand, String model, String version, int age, DateTime datelisted, String fueltype, String state, String remarks)
+            {
+                this.objid = objid;
+                this.plateno = plateno;
+                this.brand = brand;
+                this.model = model;
+                this.version = version;
+                this.age = age;
+                this.datelisted = datelisted;
+                this.fueltype = fueltype;
+                this.state = state;
+                this.remarks = remarks;
+            }
         }
 
         public class Useraccount
@@ -29,6 +44,15 @@ namespace firstapp
             public string username;
             public string password;
             public string role;
+
+            public Useraccount() { }
+            public Useraccount(string uid, string user, string pwd, string role)
+            {
+                this.userid = uid;
+                this.username = user;
+                this.password = pwd;
+                this.role = role;
+            }
         }
 
         public class Driver
@@ -38,6 +62,19 @@ namespace firstapp
             public string lastname;
             public string middlename;
             public string idno;
+
+            public Driver() { }
+            public Driver(string objid, string firstname, string lastname, string middlename, string idno)
+            {
+                this.objid = objid;
+                this.firstname = firstname;
+                this.lastname= lastname;
+                this.middlename= middlename;
+                this.idno= idno;
+            }
+        }
+        public void SaveDriver(String a)
+        {
 
         }
     }

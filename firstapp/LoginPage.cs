@@ -16,7 +16,7 @@ namespace firstapp
 {
     public partial class LoginPage : Form
     {
-        Thread thread;
+        //Thread thread;
         MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;password=1234;database=vs2010_motorpool;allowuservariables=True;persistsecurityinfo=True");
 
         public LoginPage()
@@ -28,7 +28,9 @@ namespace firstapp
         private void button1_Click(object sender, EventArgs e)
         {            
             DBConnect dBConnect = new DBConnect();
-            if(dBConnect.IsLogin(txtUsername.Text, txtPassword.Text) == true)
+            string user = txtUsername.Text.ToUpper();
+            string pass = txtPassword.Text.ToUpper();
+            if(dBConnect.IsLogin(user, pass) == true)
             {
                 //this.Close();
                 //thread = new Thread(mainform);
@@ -37,6 +39,7 @@ namespace firstapp
                 //thread.Start();
                 this.Hide();
                 Main main = new Main(txtUsername.Text, "ADMIN");
+                
                 main.ShowDialog();
                 this.Close();
                 
