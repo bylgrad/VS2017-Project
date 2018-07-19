@@ -82,62 +82,66 @@
             this.txtMiddlename.Location = new System.Drawing.Point(101, 117);
             this.txtMiddlename.Name = "txtMiddlename";
             this.txtMiddlename.Size = new System.Drawing.Size(182, 20);
-            this.txtMiddlename.TabIndex = 4;
+            this.txtMiddlename.TabIndex = 3;
             // 
             // txtLastname
             // 
             this.txtLastname.Location = new System.Drawing.Point(101, 91);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(182, 20);
-            this.txtLastname.TabIndex = 5;
+            this.txtLastname.TabIndex = 2;
             // 
             // txtFirstname
             // 
             this.txtFirstname.Location = new System.Drawing.Point(101, 65);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(182, 20);
-            this.txtFirstname.TabIndex = 6;
+            this.txtFirstname.TabIndex = 1;
             // 
             // txtIDno
             // 
             this.txtIDno.Location = new System.Drawing.Point(101, 143);
             this.txtIDno.Name = "txtIDno";
             this.txtIDno.Size = new System.Drawing.Size(182, 20);
-            this.txtIDno.TabIndex = 7;
+            this.txtIDno.TabIndex = 4;
             // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(17, 182);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(112, 182);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(198, 182);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 10;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmDriver
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(311, 260);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
@@ -153,7 +157,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmDriver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmDriver";
+            this.Text = "Driver Details";
+            this.Load += new System.EventHandler(this.frmDriver_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

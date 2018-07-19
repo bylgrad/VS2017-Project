@@ -23,5 +23,10 @@ namespace firstapp
             frmDriver frmDriver = new frmDriver();
             frmDriver.ShowDialog();
         }
+
+        private void listDriver_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

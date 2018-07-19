@@ -1,6 +1,6 @@
 ﻿namespace firstapp
 {
-    partial class frmVehicle
+    partial class listVehicle
     {
         /// <summary>
         /// Required designer variable.
@@ -50,7 +50,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVehicle";
             this.Text = "frmVehicle";
-            this.Load += new System.EventHandler(this.frmVehicle_Load);
+            this.Load += new System.EventHandler(this.listVehicle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -60,6 +60,12 @@
     <Compile Include="frmDriver.Designer.cs">
       <DependentUpon>frmDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="listVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listVehicle.Designer.cs">
+      <DependentUpon>listVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,13 +90,6 @@
     <Compile Include="listTravel.Designer.cs">
       <DependentUpon>listTravel.cs</DependentUpon>
     </Compile>
-    <Compile Include="listVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>listVehicle.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +102,9 @@
     <EmbeddedResource Include="frmDriver.resx">
       <DependentUpon>frmDriver.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="listVehicle.resx">
+      <DependentUpon>listVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,9 +116,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="listTravel.resx">
       <DependentUpon>listTravel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="listVehicle.resx">
-      <DependentUpon>listVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

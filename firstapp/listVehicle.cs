@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace firstapp
 {
-    public partial class frmVehicle : Form
+    public partial class listVehicle : Form
     {
-        public frmVehicle()
+        public listVehicle()
         {
             InitializeComponent();
         }
 
-        private void frmVehicle_Load(object sender, EventArgs e)
+        private void listVehicle_Load(object sender, EventArgs e)
         {
 
         }

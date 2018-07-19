@@ -74,7 +74,7 @@ namespace firstapp
                 case "VEHICLE":
 
                     f.Dispose();
-                    f = new frmVehicle
+                    f = new listVehicle
                     {
                         TopLevel = false
                     };

@@ -29,5 +29,16 @@ namespace firstapp
             txtLastname.Text = null;
             txtMiddlename.Text = null;
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            entity entity = new entity();
+            
+        }
+
+        private void frmDriver_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
