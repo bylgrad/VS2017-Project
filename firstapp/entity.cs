@@ -3,12 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace firstapp
 {
     class entity
     {
-        
+        public MySqlConnection connection;
+        public string server;
+        public string database;
+        public string uid;
+        public string password;
+
+        public entity()
+        {
+            Initialize();
+        }
+        public void Initialize()
+        {
+
+            server = "localhost";
+            database = "vs2010_motorpool";
+            uid = "root";
+            password = "1234";
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            connection = new MySqlConnection(connectionString);
+        }
+
         public class Vehicle
         {
             string objid;
@@ -57,25 +81,79 @@ namespace firstapp
 
         public class Driver
         {
-            public string objid;
-            public string firstname;
-            public string lastname;
-            public string middlename;
-            public string idno;
+             string objid;
+             string firstname;
+             string lastname;
+             string middlename;
+             string idno;
 
-            public Driver() { }
-            public Driver(string objid, string firstname, string lastname, string middlename, string idno)
+            public String getObjid()
+            {
+                return objid;
+            }
+            public void setObjid(String objid)
             {
                 this.objid = objid;
-                this.firstname = firstname;
-                this.lastname= lastname;
-                this.middlename= middlename;
-                this.idno= idno;
             }
-        }
-        public void SaveDriver(String a)
-        {
 
+            public String getFirstname()
+            {
+                return firstname;
+            }
+            public void setFirstname(String firstname)
+            {
+                this.firstname = firstname;
+            }
+
+            public String getLastname()
+            {
+                return lastname;
+            }
+            public void setLastname(String lastname)
+            {
+                this.lastname = lastname;
+            }
+
+            public String getMiddlename()
+            {
+                return middlename;
+            }
+            public void setMiddlename(String middlename)
+            {
+                this.middlename = middlename;
+            }
+
+            public String getIdno()
+            {
+                return idno;
+            }
+            public void setIdno(String idno)
+            {
+                this.idno = idno;
+            }
+
+            public void newdriver()
+            {
+                MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;password=1234;database=vs2010_motorpool;allowuservariables=True;persistsecurityinfo=True");
+                //entity.Driver driver = new entity.Driver();
+                string query = "INSERT INTO driver (objid, firstname, lastname, middlename, idno) VALUES('" + getObjid() + "', '" + getFirstname() + "', '" + getLastname() + "', '" + getMiddlename() + "', '" + getIdno() + "')";
+                    //create command and assign the query and connection from the constructor
+                        MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                        //Execute command
+                        cmd.ExecuteNonQuery();
+                
+            }
+            
+            //public Driver() { }
+            //public Driver(string objid, string firstname, string lastname, string middlename, string idno)
+            //{
+            //    this.objid = objid;
+            //    this.firstname = firstname;
+            //    this.lastname= lastname;
+            //    this.middlename= middlename;
+            //    this.idno= idno;
+            //}
         }
     }
 }

@@ -25,7 +25,7 @@ namespace firstapp
             //dBConnect.Insert();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {            
             DBConnect dBConnect = new DBConnect();
             string user = txtUsername.Text.ToUpper();
@@ -59,7 +59,7 @@ namespace firstapp
         //    Application.Run(new Main(n, "ADMIN"));
         //}
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -73,7 +73,7 @@ namespace firstapp
         {
 
             DBConnect dBConnect = new DBConnect();
-            dBConnect.Insert();
+            //dBConnect.Insert();
         }
 
         private void button4_Click(object sender, EventArgs e)

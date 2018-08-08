@@ -120,18 +120,34 @@ namespace firstapp
             }
         }
 
-        public class NewDriver
+        public void NewDriver(string objid, string firstname, string lastname, string middlename, string idno)
         {
-            public void AddDriver() { }
-            public void AddDriver(string a)
-            {
+            string query = "INSERT INTO driver (objid, firstname, lastname, middlename, idno) VALUES('" + objid + "', '" + firstname + "', '" + lastname + "', '" + middlename + "', '" + idno + "')";
 
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
             }
         }
 
 
+
+        public void UpdateDriver(string objid, string firstname, string lastname, string middlename, string idno)
+        {
+            string query = "UPDATE driver SET firstname = '" + firstname + "', lastname = '" + lastname + "', middlename = '" + middlename + "', idno = '" + idno + "' WHERE objid = '" + objid + "'";
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+        }
+
         //Insert statement
-        public void Insert()
+        /*public void Insert()
         {
             String objid = DateTime.Now.ToString("MMddyyyyHHmmssfff");
             string query = "INSERT INTO driver (objid, firstname, lastname, middlename, idno) VALUES('"+objid+"', 'Pora', 'Explorer', 'D', '2126073')";
@@ -148,10 +164,10 @@ namespace firstapp
                 //close connection
                 this.CloseConnection();
             }
-        }
+        } */
 
         //Update statement
-        public void Update()
+     /*   public void Update()
         {
             string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
@@ -171,10 +187,10 @@ namespace firstapp
                 //close connection
                 this.CloseConnection();
             }
-        }
+        } */
 
         //Delete statement
-        public void Delete()
+     /*   public void Delete()
         {
             string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
@@ -184,11 +200,13 @@ namespace firstapp
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
             }
-        }
+        } */
+
 
         //Select statement
         public List<string>[] Select()
         {
+
             string query = "SELECT * FROM tableinfo";
 
             //Create a list to store the result
@@ -200,6 +218,7 @@ namespace firstapp
             //Open connection
             if (this.OpenConnection() == true)
             {
+                
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 //Create a data reader and Execute the command
