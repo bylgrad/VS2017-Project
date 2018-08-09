@@ -36,3 +36,4 @@ D:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.csproj.CoreCompileInp
 D:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.csproj.CopyComplete
 D:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.exe
 D:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.pdb
+D:\WORK\Visual Studio\firstapp\firstapp\obj\Debug\firstapp.frmVehicle.resources

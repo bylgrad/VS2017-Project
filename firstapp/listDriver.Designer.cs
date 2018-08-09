@@ -53,14 +53,15 @@
             this.panel1.Controls.Add(this.btnOpen);
             this.panel1.Controls.Add(this.btnCreate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 37);
+            this.panel1.Location = new System.Drawing.Point(5, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(594, 31);
+            this.panel1.Size = new System.Drawing.Size(594, 30);
             this.panel1.TabIndex = 1;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(502, 3);
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(514, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 3;
@@ -112,7 +113,7 @@
             this.driversList.ReadOnly = true;
             this.driversList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.driversList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.driversList.Size = new System.Drawing.Size(584, 246);
+            this.driversList.Size = new System.Drawing.Size(584, 240);
             this.driversList.TabIndex = 2;
             this.driversList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.driversList_CellContentClick);
             // 
@@ -120,10 +121,10 @@
             // 
             this.panel2.Controls.Add(this.driversList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(5, 68);
+            this.panel2.Location = new System.Drawing.Point(5, 70);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(594, 256);
+            this.panel2.Size = new System.Drawing.Size(594, 250);
             this.panel2.TabIndex = 3;
             // 
             // panel3
@@ -133,7 +134,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(5, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(594, 32);
+            this.panel3.Size = new System.Drawing.Size(594, 35);
             this.panel3.TabIndex = 4;
             // 
             // label1
@@ -150,12 +151,12 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Controls.Add(this.driverLabel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(5, 324);
+            this.panel4.Location = new System.Drawing.Point(5, 320);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(594, 21);
+            this.panel4.Size = new System.Drawing.Size(594, 25);
             this.panel4.TabIndex = 5;
             // 
             // driverLabel

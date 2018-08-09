@@ -43,7 +43,7 @@ namespace firstapp
         {
             if (btnSave.Text == "Save")
             {
-                string Objid = DateTime.Now.Year + DateTime.Now.ToString("MMddyyyyHHmmssfff");
+                string Objid = "D-" + DateTime.Now.Year + DateTime.Now.ToString("MMddyyyyHHmmssfff");
 
                 DialogResult dialogResult = MessageBox.Show("This information will be saved. Proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult.ToString() == "Yes")
@@ -71,10 +71,7 @@ namespace firstapp
         {
             if (state == "READ")
             {
-                txtFirstname.Enabled = false;
-                txtLastname.Enabled = false;
-                txtMiddlename.Enabled = false;
-                txtIDno.Enabled = false;
+                panelDriver.Enabled = false;
                 btnSave.Visible = false;
                 btnClear.Visible = false;
                 btnCancel.Visible = false;
@@ -84,10 +81,7 @@ namespace firstapp
             }
             else if (state == "EDIT")
             {
-                txtFirstname.Enabled = true;
-                txtLastname.Enabled = true;
-                txtMiddlename.Enabled = true;
-                txtIDno.Enabled = true;
+                panelDriver.Enabled = true;
                 btnEdit.Visible = false;
                 btnDelete.Visible = false;
                 btnSave.Visible = true;
@@ -98,10 +92,7 @@ namespace firstapp
             }
             else if (state == "CREATE")
             {
-                txtFirstname.Enabled = true;
-                txtLastname.Enabled = true;
-                txtMiddlename.Enabled = true;
-                txtIDno.Enabled = true;
+                panelDriver.Enabled = true;
                 btnEdit.Visible = false;
                 btnDelete.Visible = false;
                 btnSave.Visible = true;

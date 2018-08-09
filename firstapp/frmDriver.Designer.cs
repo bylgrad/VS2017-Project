@@ -39,14 +39,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDriver = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dialogLabel = new System.Windows.Forms.Label();
             this.driverPanel = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panelDriver.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -150,21 +150,21 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // panel1
+            // panelDriver
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.txtFirstname);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtIDno);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtMiddlename);
-            this.panel1.Controls.Add(this.txtLastname);
-            this.panel1.Location = new System.Drawing.Point(12, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(326, 128);
-            this.panel1.TabIndex = 8;
+            this.panelDriver.BackColor = System.Drawing.Color.White;
+            this.panelDriver.Controls.Add(this.txtFirstname);
+            this.panelDriver.Controls.Add(this.label1);
+            this.panelDriver.Controls.Add(this.label2);
+            this.panelDriver.Controls.Add(this.label3);
+            this.panelDriver.Controls.Add(this.txtIDno);
+            this.panelDriver.Controls.Add(this.label4);
+            this.panelDriver.Controls.Add(this.txtMiddlename);
+            this.panelDriver.Controls.Add(this.txtLastname);
+            this.panelDriver.Location = new System.Drawing.Point(12, 49);
+            this.panelDriver.Name = "panelDriver";
+            this.panelDriver.Size = new System.Drawing.Size(326, 128);
+            this.panelDriver.TabIndex = 8;
             // 
             // panel2
             // 
@@ -176,7 +176,7 @@
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(326, 31);
+            this.panel2.Size = new System.Drawing.Size(326, 30);
             this.panel2.TabIndex = 9;
             // 
             // btnDelete
@@ -234,15 +234,15 @@
             this.ClientSize = new System.Drawing.Size(350, 236);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelDriver);
             this.Controls.Add(this.driverPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmDriver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Driver Information";
             this.Load += new System.EventHandler(this.frmDriver_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelDriver.ResumeLayout(false);
+            this.panelDriver.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDriver;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;

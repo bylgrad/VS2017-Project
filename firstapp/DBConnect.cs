@@ -122,7 +122,7 @@ namespace firstapp
 
         public void NewDriver(string objid, string firstname, string lastname, string middlename, string idno)
         {
-            string query = "INSERT INTO driver (objid, firstname, lastname, middlename, idno) VALUES('" + objid + "', '" + firstname + "', '" + lastname + "', '" + middlename + "', '" + idno + "')";
+            string query = "INSERT INTO master_driver (objid, firstname, lastname, middlename, idno) VALUES('" + objid + "', '" + firstname + "', '" + lastname + "', '" + middlename + "', '" + idno + "')";
 
             if (this.OpenConnection() == true)
             {
@@ -136,7 +136,7 @@ namespace firstapp
 
         public void UpdateDriver(string objid, string firstname, string lastname, string middlename, string idno)
         {
-            string query = "UPDATE driver SET firstname = '" + firstname + "', lastname = '" + lastname + "', middlename = '" + middlename + "', idno = '" + idno + "' WHERE objid = '" + objid + "'";
+            string query = "UPDATE master_driver SET firstname = '" + firstname + "', lastname = '" + lastname + "', middlename = '" + middlename + "', idno = '" + idno + "' WHERE objid = '" + objid + "'";
 
             if (this.OpenConnection() == true)
             {
@@ -146,6 +146,45 @@ namespace firstapp
             }
         }
 
+
+
+        public void NewVehicle(string objid, string plateno, string brand, string model, string version, string age, string fueltype, string state)
+        {
+            try
+            {
+                string datelisted = DateTime.Now.ToString();
+                string remarks = "NEW ENTRY";
+                string query = "INSERT INTO master_vehicle (objid, plateno, brand, model, version, age, fueltype, state, datelisted, remarks) VALUES('" + objid + "', '" + plateno + "', '" + brand + "', '" + model + "', '" + version + "', '" + age + "', '" + fueltype + "', '" + state + "', '" + datelisted + "', '" + remarks + "')";
+
+                if (this.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                    this.CloseConnection();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.RetryCancel);
+            }
+            
+        }
+
+
+
+        public void UpdateVehicle(string objid, string plateno, string brand, string model, string version, string age, string fueltype, string state)
+        {
+            string remarks = "UPDATED";
+            string datelisted = DateTime.Now.ToLongTimeString();
+            string query = "UPDATE master_vehicle SET plateno='" + plateno + "', brand='" + brand + "', model='" + model + "', version='" + version + "', age='" + age + "', fueltype='" + fueltype + "', state='" + state + "', datelisted='" + datelisted + "', remarks='" + remarks + "' WHERE objid = '" + objid + "'";
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+        }
         //Insert statement
         /*public void Insert()
         {
@@ -167,40 +206,40 @@ namespace firstapp
         } */
 
         //Update statement
-     /*   public void Update()
-        {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+        /*   public void Update()
+           {
+               string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
-            //Open connection
-            if (this.OpenConnection() == true)
-            {
-                //create mysql command
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
+               //Open connection
+               if (this.OpenConnection() == true)
+               {
+                   //create mysql command
+                   MySqlCommand cmd = new MySqlCommand();
+                   //Assign the query using CommandText
+                   cmd.CommandText = query;
+                   //Assign the connection using Connection
+                   cmd.Connection = connection;
 
-                //Execute query
-                cmd.ExecuteNonQuery();
+                   //Execute query
+                   cmd.ExecuteNonQuery();
 
-                //close connection
-                this.CloseConnection();
-            }
-        } */
+                   //close connection
+                   this.CloseConnection();
+               }
+           } */
 
         //Delete statement
-     /*   public void Delete()
-        {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+        /*   public void Delete()
+           {
+               string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
-            if (this.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                this.CloseConnection();
-            }
-        } */
+               if (this.OpenConnection() == true)
+               {
+                   MySqlCommand cmd = new MySqlCommand(query, connection);
+                   cmd.ExecuteNonQuery();
+                   this.CloseConnection();
+               }
+           } */
 
 
         //Select statement

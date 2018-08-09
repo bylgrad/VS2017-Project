@@ -32,7 +32,7 @@ namespace firstapp
 
             con.Open();
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT objid, lastname, firstname, middlename, idno FROM driver ORDER BY lastname";
+            string sqlSelectAll = "SELECT objid, lastname, firstname, middlename, idno FROM master_driver ORDER BY lastname";
             MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
 
             DataTable table = new DataTable();
@@ -51,17 +51,17 @@ namespace firstapp
             con.Close();
         }
 
-        public void loaddata()
-        {
-            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;password=1234;database=vs2010_motorpool;allowuservariables=True;persistsecurityinfo=True");
-            MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM driver";
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            driversList.DataSource = dt;
-        }
+        //public void loaddata()
+        //{
+        //    MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;password=1234;database=vs2010_motorpool;allowuservariables=True;persistsecurityinfo=True");
+        //    MySqlCommand cmd = connection.CreateCommand();
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.CommandText = "SELECT * FROM driver";
+        //    DataTable dt = new DataTable();
+        //    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+        //    da.Fill(dt);
+        //    driversList.DataSource = dt;
+        //}
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
