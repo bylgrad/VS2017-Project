@@ -31,14 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.driverLabel = new System.Windows.Forms.Label();
-            this.vehicleList = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.driverLabel = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.vehicleList = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,50 +81,16 @@
             this.panel2.Size = new System.Drawing.Size(719, 30);
             this.panel2.TabIndex = 4;
             // 
-            // panel3
+            // btnRefresh
             // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Controls.Add(this.driverLabel);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(5, 343);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(719, 25);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.vehicleList);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(5, 70);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(719, 273);
-            this.panel4.TabIndex = 6;
-            // 
-            // driverLabel
-            // 
-            this.driverLabel.AutoSize = true;
-            this.driverLabel.Location = new System.Drawing.Point(3, 3);
-            this.driverLabel.Name = "driverLabel";
-            this.driverLabel.Size = new System.Drawing.Size(40, 13);
-            this.driverLabel.TabIndex = 1;
-            this.driverLabel.Text = "Status:";
-            // 
-            // vehicleList
-            // 
-            this.vehicleList.AllowUserToAddRows = false;
-            this.vehicleList.AllowUserToDeleteRows = false;
-            this.vehicleList.AllowUserToOrderColumns = true;
-            this.vehicleList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.vehicleList.BackgroundColor = System.Drawing.Color.White;
-            this.vehicleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vehicleList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vehicleList.Location = new System.Drawing.Point(5, 5);
-            this.vehicleList.Name = "vehicleList";
-            this.vehicleList.ReadOnly = true;
-            this.vehicleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vehicleList.Size = new System.Drawing.Size(709, 263);
-            this.vehicleList.TabIndex = 0;
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(639, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDelete
             // 
@@ -155,16 +121,50 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // btnRefresh
+            // panel3
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(639, 3);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 6;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.driverLabel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(5, 343);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(719, 25);
+            this.panel3.TabIndex = 5;
+            // 
+            // driverLabel
+            // 
+            this.driverLabel.AutoSize = true;
+            this.driverLabel.Location = new System.Drawing.Point(3, 3);
+            this.driverLabel.Name = "driverLabel";
+            this.driverLabel.Size = new System.Drawing.Size(40, 13);
+            this.driverLabel.TabIndex = 1;
+            this.driverLabel.Text = "Status:";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.vehicleList);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(5, 70);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(5);
+            this.panel4.Size = new System.Drawing.Size(719, 273);
+            this.panel4.TabIndex = 6;
+            // 
+            // vehicleList
+            // 
+            this.vehicleList.AllowUserToAddRows = false;
+            this.vehicleList.AllowUserToDeleteRows = false;
+            this.vehicleList.AllowUserToOrderColumns = true;
+            this.vehicleList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vehicleList.BackgroundColor = System.Drawing.Color.White;
+            this.vehicleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vehicleList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vehicleList.Location = new System.Drawing.Point(5, 5);
+            this.vehicleList.Name = "vehicleList";
+            this.vehicleList.ReadOnly = true;
+            this.vehicleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vehicleList.Size = new System.Drawing.Size(709, 263);
+            this.vehicleList.TabIndex = 0;
             // 
             // listVehicle
             // 
